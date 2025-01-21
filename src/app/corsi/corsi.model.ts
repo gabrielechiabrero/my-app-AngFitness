@@ -5,6 +5,7 @@ export interface Corsi{
     istruttore: {
         nome: string,
         email: string,
+        img: string,
     },
     durata: string,
     capacitaMassima: number,
