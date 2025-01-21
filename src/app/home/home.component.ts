@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   removeCorso(corso: Corsi){
-    this.corsiService.deleteUser(corso).subscribe({
+    this.corsiService.deletePreferito(corso).subscribe({
       next: (resData=>{
         console.log("Stai eliminando", resData);
       })
