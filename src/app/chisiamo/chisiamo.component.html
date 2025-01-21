@@ -1,0 +1,18 @@
+<h1 class="text-center m-5">Chi Siamo</h1>
+
+<div class="text-center">
+    <p class="text">Lista degli istruttori presenti nei nostri corsi</p>
+</div>
+
+<div class="m-5 row">
+    
+    @for(corso of corsi() ?? []; track corso.id){
+
+        <div class="col-4 m-auto">
+            <app-istruttore class="m-5" [corso]="corso"></app-istruttore>
+        </div>
+    }
+        
+</div>
+
+
