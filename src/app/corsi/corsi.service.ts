@@ -41,12 +41,23 @@ export class CorsiService {
         )
       }
 
+    onPreferito(corso: Corsi){
+
+        const isPreferito = this.corsiPreferiti().some((c) => c.id === corso.id);
+
+        if(isPreferito){
+            return this.deletePreferito(corso);
+        } else {
+          return this.addCorsoPreferito(corso);
+        }
+    }
+
     addCorsoPreferito(corso: Corsi){
         this.corsiPreferiti.update( prevCorso => [...prevCorso, corso]);
         return this.httpClient.post('http://localhost:3000/corsiPreferiti', corso)
     }
 
-    deleteUser(corso: Corsi){
+    deletePreferito(corso: Corsi){
         this.corsiPreferiti.update(
           corsi => corsi.filter(c => c.id !== corso.id)
         )
