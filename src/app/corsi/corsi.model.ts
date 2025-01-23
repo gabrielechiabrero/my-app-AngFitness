@@ -6,6 +6,7 @@ export interface Corsi{
         nome: string,
         email: string,
         img: string,
+        descrizione: string,
     },
     durata: string,
     capacitaMassima: number,
