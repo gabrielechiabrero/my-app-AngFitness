@@ -7,9 +7,11 @@
     <div class="m-5 row">
         @for(corso of corsi() ?? []; track corso.id){
             <div class="col-4 m-auto">
-                <app-corso class="m-3" [corso]="corso"></app-corso>
+                <app-corso class="m-3" [corso]="corso" (corsoPrenotato)="openModal($event)"></app-corso>
             </div>
         }
     </div>
+
+    <app-prenotazione [corso]="corsoSelezionato"></app-prenotazione>
 
 }
