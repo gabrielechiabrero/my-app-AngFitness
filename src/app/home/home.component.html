@@ -1,11 +1,19 @@
 <h1 class="text-center m-5">La nostra Palestra</h1>
 
 <div class="m-5 row">
-    @if(corsi() !== undefined){
+    @if(corsi() !== undefined && corsi().length > 0){
         @for(corso of corsi(); track corso.id){
             <div class="col-4 m-auto">
-                <app-corso class="m-3" [corso]="corso" ></app-corso>
+                <app-corso class="m-3" [corso]="corso" (corsoPrenotato)="openModal($event)"></app-corso>
             </div>
         }
+        
+    } @else if (corsi().length === 0) {
+        <div class="col-4 m-auto text-center">
+            <p>Non ci sono corsi preferiti, aggiungili</p>
+            <button (click)="moveToCorsi()" class="btn btn-primary">Vedi tutti i corsi disponibili</button>
+        </div>
     }
 </div>
+
+<app-prenotazione [corso]="corsoSelezionato"></app-prenotazione>
