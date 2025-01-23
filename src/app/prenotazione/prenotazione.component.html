@@ -1,0 +1,52 @@
+<!-- Modal -->
+  <div class="modal fade" id="modalePrenotazione" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Prenota una Sessione di {{corso.nome}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Compila i dati qui sotto per prenotare una sessione</p>
+          <form>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci il tuo nome">
+                <label for="floatingInput">Nome</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci il tuo cognome">
+                <label for="floatingInput">Cognome</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="example@gmail.it">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div>
+                <label for="date">Data</label>
+                <input type="date" class="form-control" id="date" placeholder="Date">
+            </div>
+            <div class="form-floating mt-3">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                  <option selected>Scegli l'orario</option>
+                  <option value="9">9:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                  <option value="13">13:00</option>
+                  <option value="14">14:00</option>
+                  <option value="15">15:00</option>
+                  <option value="16">16:00</option>
+                  <option value="17">17:00</option>
+                  <option value="18">18:00</option>
+                </select>
+                <label for="floatingSelect">Orario</label>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Chiudi</button>
+            <button type="button" class="btn btn-success">Prenota</button>
+        </div>
+      </div>
+    </div>
+  </div>
