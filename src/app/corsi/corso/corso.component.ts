@@ -1,16 +1,18 @@
-import { Component, input, OnInit} from '@angular/core';
+import { Component, EventEmitter, input, Input, OnInit, Output } from '@angular/core';
 import { Corsi } from '../corsi.model';
-import { CorsiService } from '../corsi.service';
+import { CorsiService } from '../corsi.service'; 
+import { PrenotazioneComponent } from '../../prenotazione/prenotazione.component';
 
 @Component({
   selector: 'app-corso',
   imports: [],
   templateUrl: './corso.component.html',
-  styleUrl: './corso.component.css'
+  styleUrls: ['./corso.component.css']
 })
 export class CorsoComponent {
 
-  corso = input.required<Corsi>();
+  @Input() corso!: Corsi;
+  @Output() corsoPrenotato = new EventEmitter();
   
   corsi: Corsi[] = [];
   corsiPreferiti: Corsi[] = [];
@@ -37,5 +39,9 @@ export class CorsoComponent {
 
   isPreferito(corso: Corsi): boolean {
     return this.corsiPreferiti.some((c) => c.id === corso.id);
+  }
+
+  onPrenota(){
+    this.corsoPrenotato.emit(this.corso);
   }
 }
