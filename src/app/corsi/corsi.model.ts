@@ -9,6 +9,5 @@ export interface Corsi{
         descrizione: string,
     },
     durata: string,
-    capacitaMassima: number,
-    immagine: string,
+    capacitaMassima: number
 }

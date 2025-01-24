@@ -44,18 +44,6 @@ export class PrenotazioneComponent implements OnInit {
     })
   });
 
-  get isNomeValid(){
-    return (this.form.controls.nome.touched && this.form.controls.nome.invalid)
-  }
-
-  get isCognomeValid(){
-    return (this.form.controls.cognome.touched && this.form.controls.cognome.invalid)
-  }
-
-  get isEmailValid(){
-    return (this.form.controls.email.touched && this.form.controls.email.invalid)
-  }
-
   ngOnInit(): void {
 
       const savedId = localStorage.getItem('currentId');
@@ -75,18 +63,13 @@ export class PrenotazioneComponent implements OnInit {
               descrizione: ''
             },
             durata: '',
-            capacitaMassima: 0,
-            immagine: ''
+            capacitaMassima: 0
           }
       }
   }
 
   onSubmit() {
     if (this.corso) {
-
-      console.log(this.form.value.nome);
-      console.log(this.form.value.cognome);
-      console.log(this.form.value.email);
 
       const prenotazione: Prenotazione = {
         id: this.currentId.toString(),
@@ -106,10 +89,6 @@ export class PrenotazioneComponent implements OnInit {
         },
         error: (error) => {
           console.error('Errore durante la prenotazione:', error);
-          this.showToast = true;
-          setTimeout(() => {
-            this.showToast = false;
-          }, 3000); // Nascondi il toast dopo 3 secondi
         }
       });
     } 

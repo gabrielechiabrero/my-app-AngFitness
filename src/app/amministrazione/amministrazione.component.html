@@ -60,11 +60,54 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                
+                <p>Compila i dati qui sotto per inserire un nuovo corso</p>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci il tuo nome" [formControl]="form.controls.nome"  required=''>
+                  <label for="floatingInput">Nome</label>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-success">Aggiungi Corso</button>
+              <div class="form-floating mb-3">
+                  <textarea class="form-control" name="descrizione" id="floatingInput" [formControl]="form.controls.descrizione" required="" placeholder="Inserisci una descrizione"></textarea>
+                  <label for="floatingInput">Descrizione</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingInput" placeholder="Inserisci la durata della sessione" [formControl]="form.controls.durata"  required=''>
+                <label for="floatingInput">Durata Sessione</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingInput" placeholder="Inserisci quante persone possono partecipare" [formControl]="form.controls.capacita" required=''>
+                <label for="floatingInput">Capacità Massima</label> 
+              </div>
+
+              <div>
+                <p>Inserisci i dati dell'istruttore</p>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci il nome dell'istruttore" [formControl]="form.controls.nomeIstruttore" required=''>
+                  <label for="floatingInput">Nome</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="example@gmail.it" [formControl]="form.controls.email" required=''>
+                  <label for="floatingInput">Email</label>
+                </div>
+
+                <div class="input-group mb-3">
+                  <input type="file" class="form-control" id="inputGroupFile02" [formControl]="form.controls.img">
+                  <label class="input-group-text" for="inputGroupFile02">Carica un Immagine</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <textarea class="form-control" name="descrizione" id="floatingInput" [formControl]="form.controls.descrizioneIstruttore" required="" placeholder="Inserisci una descrizione"></textarea>
+                  <label for="floatingInput">Descrizione</label>
+                </div>
+              </div>
+
+              <div class="modal-footer d-flex justify-content-between">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Chiudi</button>
+                <button type="submit" class="btn btn-success">Aggiungi Corso</button>
+              </div>
+            </form>
               </div>
             </div>
           </div>

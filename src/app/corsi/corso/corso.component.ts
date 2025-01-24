@@ -1,7 +1,6 @@
-import { Component, EventEmitter, input, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Corsi } from '../corsi.model';
 import { CorsiService } from '../corsi.service'; 
-import { PrenotazioneComponent } from '../../prenotazione/prenotazione.component';
 
 @Component({
   selector: 'app-corso',

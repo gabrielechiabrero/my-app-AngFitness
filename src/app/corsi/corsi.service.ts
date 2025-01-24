@@ -52,6 +52,11 @@ export class CorsiService {
         }
     }
 
+    addCorso(corso: Corsi){
+        this.corsiPreferiti.update( prevCorso => [...prevCorso, corso]);
+        return this.httpClient.post('http://localhost:3000/corsi', corso)
+    }
+
     addCorsoPreferito(corso: Corsi){
         this.corsiPreferiti.update( prevCorso => [...prevCorso, corso]);
         return this.httpClient.post('http://localhost:3000/corsiPreferiti', corso)
