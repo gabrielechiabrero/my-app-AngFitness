@@ -57,6 +57,13 @@ export class CorsiService {
         return this.httpClient.post('http://localhost:3000/corsiPreferiti', corso)
     }
 
+    deleteCorso(corso: Corsi){
+        this.corsiPreferiti.update(
+            corsi => corsi.filter(c => c.id !== corso.id)
+        )
+        return this.httpClient.delete('http://localhost:3000/corsi/' + corso.id);
+    }
+
     deletePreferito(corso: Corsi){
         this.corsiPreferiti.update(
           corsi => corsi.filter(c => c.id !== corso.id)
